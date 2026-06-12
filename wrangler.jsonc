@@ -1,0 +1,33 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "cf-hysteria-realm",
+  "main": "src/index.ts",
+  "compatibility_date": "2026-05-30",
+  "workers_dev": true,
+  "preview_urls": true,
+  "keep_vars": true,
+  "vars": {
+    "REALM_ID": "Ali1383",
+    "DEBUG": "false"
+  },
+  "secrets": {
+    "required": ["REALM_TOKEN"]
+  },
+  "durable_objects": {
+    "bindings": [
+      {
+        "name": "REALM",
+        "class_name": "SingleRealm"
+      }
+    ]
+  },
+  "migrations": [
+    {
+      "tag": "v1",
+      "new_sqlite_classes": ["SingleRealm"]
+    }
+  ],
+  "observability": {
+    "enabled": true
+  }
+}

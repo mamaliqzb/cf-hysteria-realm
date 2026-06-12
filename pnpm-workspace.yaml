@@ -1,0 +1,10 @@
+packages:
+  - .
+
+allowBuilds:
+  esbuild: true
+  sharp: true
+  workerd: true
+minimumReleaseAge: 4320
+minimumReleaseAgeExclude:
+  - '@cloudflare/workers-types@4.20260530.1'

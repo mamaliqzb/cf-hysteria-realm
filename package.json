@@ -1,0 +1,32 @@
+{
+  "name": "cf-hysteria-realm",
+  "version": "0.1.0",
+  "private": true,
+  "license": "MIT",
+  "type": "module",
+  "scripts": {
+    "dev": "wrangler dev",
+    "deploy": "wrangler deploy",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit"
+  },
+  "cloudflare": {
+    "bindings": {
+      "REALM_ID": {
+        "description": "The single Hysteria realm ID accepted by this deployment. Use the same value in your Hysteria Realm configuration."
+      },
+      "REALM_TOKEN": {
+        "description": "Shared bearer token for registering the server and accepting client connect requests. Generate a long random value and keep it secret."
+      },
+      "DEBUG": {
+        "description": "Set to `true` to enable Worker console debug logs. Use `false` for normal deployments."
+      }
+    }
+  },
+  "devDependencies": {
+    "@cloudflare/workers-types": "^4.20260530.0",
+    "typescript": "^5.9.3",
+    "vitest": "^4.1.7",
+    "wrangler": "^4.18.0"
+  }
+}
